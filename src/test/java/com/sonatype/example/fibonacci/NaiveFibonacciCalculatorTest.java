@@ -23,6 +23,11 @@ import static org.hamcrest.CoreMatchers.*;
  */
 public class NaiveFibonacciCalculatorTest
 {
+    @Test(expected=IllegalArgumentException.class)
+    public final void verifyNegativeValueIsNotAllowed() {
+        new NaiveFibonacciCalculator().valueAtPosition(-1);
+    }
+
     @Test
     public final void verifyValueAtPosition0() {
         long value = new NaiveFibonacciCalculator().valueAtPosition(0);

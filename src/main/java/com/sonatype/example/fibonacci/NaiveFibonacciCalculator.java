@@ -16,6 +16,8 @@ package com.sonatype.example.fibonacci;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 /**
  * A very inefficient calculator.
  * 
@@ -28,6 +30,8 @@ public class NaiveFibonacciCalculator
     
     // position in the sequence
     public long valueAtPosition(int position) {
+        checkArgument(position >= 0, "Position must be a positive value");
+        
         long lastValue = 0;
         for (int currentPosition = 1; currentPosition <= position; currentPosition++) {
             lastValue = calculate(currentPosition);
