@@ -13,6 +13,9 @@
 
 package com.sonatype.example.fibonacci;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * A very inefficient calculator.
  * 
@@ -21,12 +24,14 @@ package com.sonatype.example.fibonacci;
  */
 public class NaiveFibonacciCalculator
 {
+    private static final Logger log = LoggerFactory.getLogger( NaiveFibonacciCalculator.class );
+    
     // position in the sequence
     public long valueAtPosition(int position) {
         long lastValue = 0;
         for (int currentPosition = 1; currentPosition <= position; currentPosition++) {
             lastValue = calculate(currentPosition);
-            System.out.println(currentPosition + ": " + lastValue);
+            log.info( "{}: {}", currentPosition, lastValue);
         }
         return lastValue;
     }
