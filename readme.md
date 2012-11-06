@@ -47,13 +47,13 @@ You could specify the copy-dependencies parameters on the command line or add th
 
 Difference of target directory with dependency collection:
 
-![Diff of target with dependency collection](target-diff-with-dep-collection.png)
+![Diff of target with dependency collection](https://raw.github.com/basil3whitehouse/insight-ahc-component-example/master/images/target-diff-with-dep-collection.png)
 
 ## Limiting scope of analysis
 
 By default `copy-dependencies` collects all dependencies required for the build, which often includes some needed only for testing (you are writing tests right =).  As seen in  a report of the example project:
 
-![Analysis report of all dependencies](all-scopes.png)
+![Analysis report of all dependencies](https://raw.github.com/basil3whitehouse/insight-ahc-component-example/master/images/all-scopes.png)
 
 You may want to limit analysis to runtime only dependencies to better represent what users of your component will be consuming.  This can be accomplished by specifying what scopes to include when collecting dependencies.  Add `includeScope` to the copy-dependencies configuration:
 
@@ -67,4 +67,4 @@ You may want to limit analysis to runtime only dependencies to better represent 
 
 After analyzing the build output with the AHC Maven plugin the report now reflects just the runtime components:
 
-![Analysis report of runtime dependencies](runtime-scope.png)
+![Analysis report of runtime dependencies](https://raw.github.com/basil3whitehouse/insight-ahc-component-example/master/images/runtime-scope.png)
