@@ -31,7 +31,13 @@ public class FibonacciCalculatorBenchmark
             new NaiveFibonacciCalculator().valueAtPosition(position);
         }
     }
-    
+
+    public void timeFastCalculator(int reps) {
+        for (int i = 0; i < reps; i++) {
+            new FasterFibonacciCalculator().valueAtPosition(position);
+        }
+    }
+
     // Make runnable from IDE.
     public static void main(String[] args) throws Exception {
         Runner.main(FibonacciCalculatorBenchmark.class, args);
