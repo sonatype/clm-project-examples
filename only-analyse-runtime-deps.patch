@@ -1,0 +1,12 @@
+diff --git a/fibonacci-calculator/pom.xml b/fibonacci-calculator/pom.xml
+index 5a3a965..81e254c 100644
+--- a/fibonacci-calculator/pom.xml
++++ b/fibonacci-calculator/pom.xml
+@@ -69,6 +69,7 @@
+               <outputDirectory>${ahc.input}</outputDirectory>
+               <overWriteReleases>false</overWriteReleases>
+               <overWriteSnapshots>true</overWriteSnapshots>
++              <includeScope>runtime</includeScope>
+             </configuration>
+           </execution>
+         </executions>
