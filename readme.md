@@ -6,7 +6,7 @@ Application Health Check is intended to analyse application bundles (war, ear, z
 
 # Example with AHC Maven plugin
 
-An example of using AHC with your component build is shown in fibonacci-calculator/pom.xml.  The dependencies are collected into `target/all-your-dependencies/` and the AHC Maven plugin is configured to analyse that directory with the `ahc.input` parameter.  Run the build from the fibonacci-calculator project:
+An example of using AHC with your component build is shown in [fibonacci-calculator/pom.xml](https://github.com/basil3whitehouse/insight-ahc-component-example/blob/master/fibonacci-calculator/pom.xml).  The dependencies are collected into `target/all-your-dependencies/` and the AHC Maven plugin is configured to analyse that directory with the `ahc.input` parameter.  Run the build from the fibonacci-calculator project:
 
     cd fibonacci-calculator
     mvn clean package com.sonatype.insight:ahc:run
