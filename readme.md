@@ -1,0 +1,1 @@
+Examples of using the Insight Application Health Check Maven plugin to analyze a component instead of an application.
