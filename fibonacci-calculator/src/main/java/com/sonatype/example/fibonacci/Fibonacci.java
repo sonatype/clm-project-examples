@@ -20,6 +20,6 @@ public class Fibonacci
 {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
-        new NaiveFibonacciCalculator().valueAtPosition(n);
+        new FasterFibonacciCalculator().valueAtPosition(n);
     }
 }
