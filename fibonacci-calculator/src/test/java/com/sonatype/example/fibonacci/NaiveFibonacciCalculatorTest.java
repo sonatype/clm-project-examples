@@ -28,10 +28,9 @@ public class NaiveFibonacciCalculatorTest
         new NaiveFibonacciCalculator().valueAtPosition(-1);
     }
 
-    @Test
-    public final void verifyValueAtPosition0() {
-        long value = new NaiveFibonacciCalculator().valueAtPosition(0);
-        assertThat(value, is(0l));
+    @Test(expected=IllegalArgumentException.class)
+    public final void verifyPosition0IsNotAllowed() {
+        new NaiveFibonacciCalculator().valueAtPosition(0);
     }    
 
     @Test
@@ -40,6 +39,12 @@ public class NaiveFibonacciCalculatorTest
         assertThat(value, is(1l));
     }
 
+    @Test
+    public final void verifyValueAtPosition5() {
+        long value = new NaiveFibonacciCalculator().valueAtPosition(5);
+        assertThat(value, is(5l));
+    }
+    
     @Test
     public final void verifyValueAtPosition10() {
         long value = new NaiveFibonacciCalculator().valueAtPosition(10);

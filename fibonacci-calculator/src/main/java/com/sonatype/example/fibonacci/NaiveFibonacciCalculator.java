@@ -26,17 +26,19 @@ import static com.google.common.base.Preconditions.checkArgument;
  */
 public class NaiveFibonacciCalculator
 {
-    private static final Logger log = LoggerFactory.getLogger( NaiveFibonacciCalculator.class );
-    
+    private static final Logger log = LoggerFactory.getLogger(NaiveFibonacciCalculator.class);
+
     // position in the sequence
     public long valueAtPosition(int position) {
-        checkArgument(position >= 0, "Position must be a positive value");
-        
+        checkArgument(position > 0, "Position must be a positive value");
+
         long lastValue = 0;
+        
         for (int currentPosition = 1; currentPosition <= position; currentPosition++) {
             lastValue = calculate(currentPosition);
-            log.info( "{}: {}", currentPosition, lastValue);
+            log.info("{}: {}", currentPosition, lastValue);
         }
+        
         return lastValue;
     }
 
