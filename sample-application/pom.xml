@@ -9,6 +9,14 @@
   <version>1.0.0</version>
   <name>Insight: Example Application</name>
 
+  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+
   <!--
   NOTE: The wildcard exclusions only work in Maven 3 and even there only with warnings, but they do the job.
   -->
@@ -298,6 +306,17 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.4</version>
+        <extensions>true</extensions>
+        <configuration>
+          <nexusUrl>http://localhost:8081/nexus</nexusUrl>
+          <serverId>nexus-default</serverId>
+          <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+        </configuration>
       </plugin>
     </plugins>
     <pluginManagement>
