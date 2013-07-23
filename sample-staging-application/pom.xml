@@ -1,343 +1,116 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.brian</groupId>
-  <artifactId>test</artifactId>
-  <version>2.12</version>
-  <packaging>jar</packaging>
+	<groupId>com.sonatype.nexus.clm</groupId>
+	<artifactId>sample</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
 
-  <name>test</name>
-  <url>http://maven.apache.org</url>
+	<name>Sonatype Nexus CLM Sample</name>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<distributionManagement>
+		<!-- repository> <id>nexus</id> <name>Corporate Repository</name> <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2</url> 
+			</repository> -->
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Corporate Repository</name>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-<dependency>
-      <groupId>edu.stanford.ejalbert</groupId>
-      <artifactId>BrowserLauncher2</artifactId>
-      <version>1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.avro</groupId>
-      <artifactId>avro-ipc</artifactId>
-      <version>1.5.0</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>tomcat</groupId>
-      <artifactId>catalina-host-manager</artifactId>
-      <version>5.5.23</version>
-    </dependency>
-    <dependency>
-      <groupId>cobertura</groupId>
-      <artifactId>cobertura</artifactId>
-      <version>1.6</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.opencms.modules</groupId>
-      <artifactId>com.alkacon.opencms.v8.twitter</artifactId>
-      <version>8.0.2</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-beanutils</groupId>
-      <artifactId>commons-beanutils</artifactId>
-      <version>1.8.3</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>commons-dbcp</groupId>
-      <artifactId>commons-dbcp</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-pool</groupId>
-      <artifactId>commons-pool</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flume.flume-ng-channels</groupId>
-      <artifactId>flume-jdbc-channel</artifactId>
-      <version>1.0.0-incubating</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flume</groupId>
-      <artifactId>flume-ng-core</artifactId>
-      <version>1.0.0-incubating</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flume</groupId>
-      <artifactId>flume-ng-node</artifactId>
-      <version>1.0.0-incubating</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.geronimo.framework</groupId>
-      <artifactId>geronimo-security</artifactId>
-      <version>2.1</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>geronimo</groupId>
-      <artifactId>geronimo-tomcat</artifactId>
-      <version>1.0</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>geronimo</groupId>
-      <artifactId>geronimo-tomcat-builder</artifactId>
-      <version>1.1</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>javancss</groupId>
-      <artifactId>javancss</artifactId>
-      <version>29.50</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.jclouds.driver</groupId>
-      <artifactId>jclouds-bouncycastle</artifactId>
-      <version>1.3.1</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.jclouds.driver</groupId>
-      <artifactId>jclouds-enterprise</artifactId>
-      <version>1.3.1</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.mortbay.jetty</groupId>
-      <artifactId>jetty</artifactId>
-      <version>6.1.15</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-access</artifactId>
-      <version>0.6</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.openid4java</groupId>
-      <artifactId>openid4java</artifactId>
-      <version>0.9.5</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>tomcat</groupId>
-      <artifactId>servlets-default</artifactId>
-      <version>5.5.4</version>
-    </dependency>
-    <dependency>
-      <groupId>tomcat</groupId>
-      <artifactId>tomcat-util</artifactId>
-      <version>5.5.23</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>edu.ucar</groupId>
-      <artifactId>unidataCommon</artifactId>
-      <version>4.2.20</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>net.sf.xradar</groupId>
-      <artifactId>xradar</artifactId>
-      <version>1.1.2</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- Similar matches. -->
-    <dependency>
-      <!-- Available from RSO. -->
-      <groupId>commons-httpclient</groupId>
-      <artifactId>commons-httpclient</artifactId>
-      <version>3.1.SONATYPE</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-      <!-- Not in a Maven repo (e.g. taken from Orbit) -->
-    </dependency>
-  </dependencies>
-  <distributionManagement>
-    <repository>
-      <id>nexus</id>
-      <name>Corporate Repository</name>
-      <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus</id>
-      <name>Corporate Repository</name>
-      <url>http://localhost:8081/nexus/content/repositories/snapshots2</url>
-    </snapshotRepository>
-  </distributionManagement>
-  
-<build>
-<plugins>
-                 <plugin>
-                   <groupId>org.sonatype.plugins</groupId>
-                   <artifactId>nexus-staging-maven-plugin</artifactId>
-                   <version>1.4-SNAPSHOT</version>
-                   <extensions>true</extensions>
-                   <configuration>
-				     <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-                     <serverId>nexus</serverId>
-                     <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
-                     <!-- Deploy URL overrides all, so not Staging happens at all -->
-                     <!--deployUrl>http://localhost:8081/nexus/content/repositories/snapshots/</deployUrl-->
-                     <!-- Profile Id override profile matching -->
-                     <!--stagingProfileId></stagingProfileId-->
-                     <!-- By having none of those above, we actually use Staging V2 in "auto" mode, profile will be matched server side -->
-                     <!-- Tags -->
-                     <tags>
-                       <localUsername>${env.USER}</localUsername>
-                       <javaVersion>${java.version}</javaVersion>
-                     </tags>
-                   </configuration>
-                 </plugin>
-				       <plugin>
-<groupId>com.sonatype.clm</groupId>
-<artifactId>clm-maven-plugin</artifactId>
-<version>2.0.1-SNAPSHOT</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>attach</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin> 
-               </plugins>
-</build>
-  
-  
-<profiles>
-<profile>
-   <id>sign</id>
-  <build>
+	<build>
 		<plugins>
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <passphrase>${gpg.passphrase}</passphrase>
-              <useAgent>true</useAgent>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-  </build>
-  </profile>
-  </profiles>
+			<plugin>
+				<!-- This plugin replaces the standard maven-deploy-plugin in the lifecycle. 
+					It stores artifacts locally until the last module in a build and then uploads 
+					them all at once to Nexsu for staging. It will automatically close the staging 
+					repository which invokes the first set of rules -->
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.4.4</version>
+
+				<!-- this tells maven that there are pieces of the plugin which participate 
+					in the build plan, pre-execution -->
+				<extensions>true</extensions>
+				<configuration>
+					<!--If the rules fail on auto close, then leave the repo in Nexus. This 
+						will allow users to review the CLM Report -->
+					<keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+
+					<!-- The id in your maven settings file that has the credentials needed 
+						for staging -->
+					<serverId>nexus</serverId>
+					<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+
+					<!-- Force the selection of the profile instead of letting Nexus choose -->
+					<!--stagingProfileId>com.brian</stagingProfileId -->
+				</configuration>
+				<executions>
+					<execution>
+						<!-- This invokes the plugin in the deploy phase. If this is not the 
+							last module, then the artifacts are stored locally. If it is the last module, 
+							the staging will occur immediately. -->
+						<id>deploy-staged</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<!-- This execution will immediately ask Nexus to release the staging 
+							repository. This will only happen if the previous rule execution was successfull. 
+							Setting the system up this way allows staging to act like a high speed tolling 
+							station where builds don't stop in staging unless there is a violation of 
+							the configured policy. -->
+						<id>release</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>release</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<!-- This plugin fingerprints the components used in the actual build. 
+					This information is used by Nexus CLM to perform analysis of all the transitive 
+					dependencies. Nexus will also inspect the contents of any component that 
+					is staged (ie zips, wars) to find additional components that need to be vetted -->
+				<groupId>com.sonatype.clm</groupId>
+				<artifactId>clm-maven-plugin</artifactId>
+				<version>2.0.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>attach</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<!-- We need to ensure that the standard deploy plugin doesn't interfere 
+					with Staging. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Next follows a number of dependencies, some of them with known copyleft 
+		licenses and/or security issues -->
+	<dependencies>
+		<dependency>
+			<groupId>com.sonatype.clm</groupId>
+			<artifactId>sample-application</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
 </project>
