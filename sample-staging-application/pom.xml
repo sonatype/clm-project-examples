@@ -106,9 +106,9 @@
 		licenses and/or security issues -->
 	<dependencies>
 		<dependency>
-			<groupId>com.sonatype.clm</groupId>
-			<artifactId>sample-application</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>org.sonatype.clm</groupId>
+			<artifactId>sample-application-imports</artifactId>
+			<version>1.0</version>
 			<scope>import</scope>
 			<type>pom</type>
 		</dependency>

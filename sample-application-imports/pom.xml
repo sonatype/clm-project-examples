@@ -8,7 +8,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.sonatype.clm</groupId>
-	<artifactId>sample-application</artifactId>
+	<artifactId>sample-application-imports</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
 
@@ -44,10 +44,6 @@
 			</roles>
 		</developer>
 	</developers>
-
-	<scm>
-		<developerConnection></developerConnection>
-	</scm>
 
 	<!-- Next follows a number of dependencies, some of them with known copyleft 
 		licenses and/or security issues -->
